@@ -6,30 +6,38 @@
          url('../font/zx_spectrum-7.woff') format('woff');
 }
 
+@font-face {
+    font-family: 'luculent';
+    src: url('../font/luculent.woff') format('woff');
+}
+
 /* PRE CODE tags. */
 pre {
-    background-color: rgb(0, 0, 0);
-    color: rgba(172, 255, 47, 0.459);
-    border: 1px solid rgb(170, 170, 170);
+    background-color: #212F33;
+    color: #84D2E0;
+    text-shadow: 0px 0px 2px #84D2E0;
     padding: 0% 5% 0% 5%;
     margin: 0;
 }
 pre code {
-    font-family: 'zx_spectrum';
-    font-size: 12px;
+    font-family: 'luculent';
+    font-size: 14px;
 }
 
 /* Code styles. */
 /* TODO: "Borrow" theme from . */
 pre code .mnemonic {
-    color:#b64978;
+    color:#95EDFE;
+    text-shadow: 0px 0px 2px #95EDFE;
+    font-weight: bolder;
 }
 pre code .string {
-    color:#961d2d;
+    color:#74999E;
 }
 pre code .char {
-    color:#1D968C;
+    color:#74999E;
 }
 pre code .comment{
-    color:#1f5d68;
+    color:#698A90;
+    text-shadow: 0px 0px 2px #698A90;
 }
