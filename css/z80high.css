@@ -1,0 +1,35 @@
+/* Custom font for code. */
+/* TODO: this will not work. What a terrible font. */
+@font-face {
+    font-family: 'zx_spectrum';
+    src: url('../font/zx_spectrum-7.woff2') format('woff2'),
+         url('../font/zx_spectrum-7.woff') format('woff');
+}
+
+/* PRE CODE tags. */
+pre {
+    background-color: rgb(0, 0, 0);
+    color: rgba(172, 255, 47, 0.459);
+    border: 1px solid rgb(170, 170, 170);
+    padding: 0% 5% 0% 5%;
+    margin: 0;
+}
+pre code {
+    font-family: 'zx_spectrum';
+    font-size: 12px;
+}
+
+/* Code styles. */
+/* TODO: "Borrow" theme from . */
+pre code .mnemonic {
+    color:#b64978;
+}
+pre code .string {
+    color:#961d2d;
+}
+pre code .char {
+    color:#1D968C;
+}
+pre code .comment{
+    color:#1f5d68;
+}
