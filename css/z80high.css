@@ -1,43 +1,47 @@
 /* Custom font for code. */
-/* TODO: this will not work. What a terrible font. */
-@font-face {
-    font-family: 'zx_spectrum';
-    src: url('../font/zx_spectrum-7.woff2') format('woff2'),
-         url('../font/zx_spectrum-7.woff') format('woff');
-}
-
 @font-face {
     font-family: 'luculent';
     src: url('../font/luculent.woff') format('woff');
 }
 
-/* PRE CODE tags. */
-pre {
+/* Seek for a <pre lang="z80">. */
+pre[lang="z80"] {
     background-color: #212F33;
-    color: #84D2E0;
-    text-shadow: 0px 0px 2px #84D2E0;
-    padding: 0% 5% 0% 5%;
+    color: #64afbd;
+    text-shadow: none;
+    padding: 2% 4% 2% 4%;
     margin: 0;
-}
-pre code {
     font-family: 'luculent';
     font-size: 14px;
 }
 
 /* Code styles. */
-/* TODO: "Borrow" theme from . */
-pre code .mnemonic {
+pre .mnemonic {
     color:#95EDFE;
-    text-shadow: 0px 0px 2px #95EDFE;
+    text-shadow: 0px 0px 1px #95EDFE;
     font-weight: bolder;
 }
-pre code .string {
+pre .register {
+    color:#95EDFE;
+    text-shadow: 0px 0px 1px #95EDFE;
+    font-weight: bolder;
+}
+pre .string {
     color:#74999E;
 }
-pre code .char {
+pre .char {
     color:#74999E;
 }
-pre code .comment{
+pre .directive {
+    color:#84D2E0;
+    text-shadow: 0px 0px 2px #84D2E0;
+    ;
+}
+pre .comment {
     color:#698A90;
     text-shadow: 0px 0px 2px #698A90;
+}
+pre .identifier {
+    color:#64afbd;
+    text-shadow: 0px 0px 1px #64afbd;
 }

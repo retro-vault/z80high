@@ -13,8 +13,7 @@
     <div>
         <p>Sample code.</p>
 
-        <pre>
-        <code>
+        <pre lang="z80">
         ;; crt0rom.s
         ;; 
         ;; zx spectrum 48K rom startup code
@@ -40,32 +39,32 @@
         jp      init                    ; init
         .db     0,0,0,0
 
-        ;; reset 0x08
+        ;; rst 0x08
         jp      rst8
 rst8ret:
         reti
         .db     0,0,0
 
-        ;; reset  0x10
+        ;; rst  0x10
         jp      rst10
 rst10ret:
         reti
         .db     0,0,0
 
-        ;; reset 0x18
+        ;; rst 0x18
         jp      rst18
 rst18ret:
         reti
         .db     0,0,0
 
-        ;; reset 0x20
+        ;; rst 0x20
         jp      rst20
 rst20ret:
         reti
         .db     0,0,0
 
-        ;; reset 0x28
-        jp  rst28
+        ;; rst 0x28
+        jp      srst28
 rst28ret:
         reti
         .db     0,0,0
@@ -111,24 +110,24 @@ tarpit:
         ;; affects: bc, de, hl
 _sys_vec_set::
         call    _ir_disable
-        pop		hl                      ; ret address / ignore
-        pop		bc                      ; bc = handler
-        pop		de                      ; d = undefined, e = vector number
+        pop     hl                      ; ret address / ignore
+        pop     bc                      ; bc = handler
+        pop     de                      ; d = undefined, e = vector number
         ;; restore stack
         push	de
         push	bc
         push	hl
-        ld		d,#0x00                 ; de = 16 bit vector number
-        ld		hl,#__sys_vec_tbl       ; vector table start
-        add		hl,de
-        add		hl,de
-        add		hl,de
-        inc		hl						; hl = hl + 3 * de + 1
+        ld      d,#0x00                 ; de = 16 bit vector number
+        ld      hl,#__sys_vec_tbl       ; vector table start
+        add     hl,de
+        add     hl,de
+        add     hl,de
+        inc     hl                      ; hl = hl + 3 * de + 1
         ;; hl now points to vector address in RAM		
         ;; so set it to handler value in bc
-        ld		(hl),c
-        inc		hl
-        ld		(hl),b
+        ld      (hl),c
+        inc     hl
+        ld      (hl),b
         call    _ir_enable
         ret
 
@@ -142,10 +141,10 @@ _sys_vec_get::
         pop     de                      ; d = undefied, e = #vector
         ld      d,#0                    ; de = 16bit vector number
         ld      hl,#__sys_vec_tbl       ; vector table to hl
-        add		hl,de
-        add		hl,de
-        add		hl,de
-        inc		hl                      ; hl = hl + 3 * de + 1
+        add     hl,de
+        add     hl,de
+        add     hl,de
+        inc     hl                      ; hl = hl + 3 * de + 1
         ld      e,(hl)                  ; vector into de
         inc     hl
         ld      d,(hl)
@@ -162,8 +161,8 @@ _sys_vec_get::
 _ir_disable::	
         di
         push    hl
-        ld		hl,#ir_refcount
-        inc		(hl)
+        ld      hl,#ir_refcount
+        inc     (hl)
         pop     hl
         ret
 
@@ -175,13 +174,13 @@ _ir_disable::
         ;; affects: -
 _ir_enable::
         push    af
-        ld		a,(#ir_refcount)
-        or		a
-        jr		z,do_ei					; if a==0 then just ei		
-        dec		a						; if a<>0 then dec a
-        ld		(#ir_refcount),a	    ; write back to counter
-        or		a						; and check for ei
-        jr		nz,dont_ei				; not yet...
+        ld      a,(#ir_refcount)
+        or      a
+        jr      z,do_ei                 ; if a==0 then just ei		
+        dec     a                       ; if a<>0 then dec a
+        ld      (#ir_refcount),a        ; write back to counter
+        or      a                       ; and check for ei
+        jr      nz,dont_ei              ; not yet...
 do_ei:		
         ei
 dont_ei:	
@@ -271,9 +270,7 @@ ir_refcount:
 
         .area	_INITIALIZER
 init_ir_refcount:
-        .byte	0
-        </code>
-        </pre>
+        .byte	0</pre>
 
     </div>
 </body>

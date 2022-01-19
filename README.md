@@ -2,9 +2,38 @@
 
 # z80high
 
-Plain JavaScript code for highlighting [Z80](http://www.zilog.com/docs/z80/um0080.pdf) assembly on your page, This code recognizes plain Z80 and [SDCC](http://sdcc.sourceforge.net/) assembly directives.
+Plain JavaScript code for highlighting [Z80](http://www.zilog.com/docs/z80/um0080.pdf) assembly on your page. 
+It recognizes plain Z80 and [SDCC](http://sdcc.sourceforge.net/) assembly directives.
 
-This repository is under development. 
+![Sample](img/sample.jpg)
+
+# Usage
+
+Syntax highlighter requires three files:
+ * The stylesheet `css/z80high.css`
+ * The JavaScript code `js/z80high.js` and
+ * The woff font `font/luculent.woff` 
+
+Include stylesheet and JavaScript file into your html and put `pre` tag with `lang="z80` around your code . 
+
+~~~html
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel='stylesheet' type='text/css' href='css/z80high.css'>
+    <script src='js/z80high.js' defer></script>
+</head>
+<body>
+    <pre lang="z80">
+        ;; sample z80 code
+        .org    0x8000
+        ld      a,#0xaa
+        ld      hl,#16384
+        ld      (hl),a
+        ret</pre>
+</body>
+</html>
+~~~
 
 [language.url]:   https://en.wikipedia.org/wiki/JavaScript
 [language.badge]: https://img.shields.io/badge/language-JavaScript-blue.svg
@@ -12,4 +41,4 @@ This repository is under development.
 [license.url]:    https://github.com/tstih/nice/blob/master/LICENSE
 [license.badge]:  https://img.shields.io/badge/license-MIT-blue.svg
 
-[status.badge]:  https://img.shields.io/badge/status-under%20development-red.svg
+[status.badge]:  https://img.shields.io/badge/status-stable-green.svg
