@@ -2,19 +2,19 @@
 
 # z80high
 
-Plain JavaScript code for highlighting [Z80](http://www.zilog.com/docs/z80/um0080.pdf) assembly on your page. 
+Pure JavaScript code for highlighting [Z80](http://www.zilog.com/docs/z80/um0080.pdf) assembly on your page. 
 It recognizes plain Z80 and [SDCC](http://sdcc.sourceforge.net/) assembly directives.
 
 ![Sample](img/sample.jpg)
 
 # Usage
 
-Syntax highlighter requires three files:
+To use the Syntax highlighter, copy three files from the repository into your project:
  * The stylesheet `css/z80high.css`
  * The JavaScript code `js/z80high.js` and
  * The woff font `font/luculent.woff` 
 
-Include stylesheet and JavaScript file into your html and put `pre` tag with `lang="z80` around your code . 
+Include stylesheet and JavaScript file into your html and put `pre` tag with `lang="z80` around your code. 
 
 ~~~html
 <!DOCTYPE html>
