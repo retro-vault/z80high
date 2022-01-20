@@ -14,9 +14,9 @@ To use the Syntax Highlighter, copy three files from the repository into your pr
  * The JavaScript code `js/z80high.js` and
  * The woff font `font/luculent.woff` 
 
-Include stylesheet and JavaScript file into your html and put `pre` tag with `lang="z80` around your code. 
+Add stylesheet and JavaScript to your html and put your code into a `pre lang="z80"` block.
 
-~~~html
+~~~
 <!DOCTYPE html>
 <html>
 <head>
