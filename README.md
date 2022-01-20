@@ -9,7 +9,7 @@ It recognizes plain Z80 and [SDCC](http://sdcc.sourceforge.net/) assembly direct
 
 # Usage
 
-To use the Syntax Highlighter, copy three files from the repository into your project:
+To use the syntax highlighter, copy three files from the repository into your project:
  * The stylesheet `css/z80high.css`
  * The JavaScript code `js/z80high.js` and
  * The woff font `font/luculent.woff` 
