@@ -41,4 +41,4 @@ Add stylesheet and JavaScript to your html and put your code into a `pre lang="z
 [license.url]:    https://github.com/tstih/nice/blob/master/LICENSE
 [license.badge]:  https://img.shields.io/badge/license-MIT-blue.svg
 
-[status.badge]:  https://img.shields.io/badge/status-stable-green.svg
+[status.badge]:  https://img.shields.io/badge/status-stable-dkgreen.svg
